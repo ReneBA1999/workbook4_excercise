@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+   
+</head>
+<script>
+    // Define a Book object
+    var book = {
+        title: "The Great Gatsby",
+        author: "F. Scott Fitzgerald",
+        pages: 218,
+        prices: 15.99,
+        
+        // Method to get book details
+        getDetails: function() {
+            return "Title: " + this.title + ", Author: " + this.author + ", Pages: " + this.pages;
+        }
+    };
+
+    let book2 = {
+        title: "A new book",
+        author: "Thom Hanks",
+        pages: 218,
+        prices: 12.99,
+        
+        // Method to get book details
+        getDetails: function() {
+            console.log()
+            return "Title: " + this.title + ", Author: " + this.author + ", Pages: " + this.pages;
+        }
+    };
+
+    // Function to display book details
+    function displayBookDetails(book) {
+        let bookDetails = book.getDetails();
+        document.getElementById("bookDetails").innerText = bookDetails;
+    }
+
+    function displayBookDetails2(book2) {
+        let bookDetails2 = book2.getDetails();
+        document.getElementById("bookDetails2").innerText = bookDetails2;
+    }
+
+    function calculateTotalPrice() {
+     let bookPrices = book.prices +  book2.prices;
+     document.getElementById("bookDetails").innerHTML = bookPrices;
+    }
+
+
+   
+</script>
+<body>
+    <h1>Book Details</h1>
+    <div id="bookDetails"></div>
+    <div id="bookDetails2"></div>
+    <div id="bookPrices"></div>
+    <button onclick="displayBookDetails(book)">Show a specific book</button>
+    <button onclick="displayBookDetails2(book2)">Show a specific book</button>
+    <button onclick="calculateTotalPrice()">Calculate</button>
+
+</body>
+</html>
