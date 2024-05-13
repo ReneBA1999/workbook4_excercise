@@ -1,0 +1,98 @@
+
+
+<!--The <select> element in html creates a list
+  -it is a dropdown list of a size attribute isnt specified
+
+//Example -->
+
+<select id="statesList" name="states">
+ <option value="CO">Colorado</option>
+ <option value="ME">Maine</option>
+ <option value="TX">Texas</option>
+ <option value="WA">Washington</option>
+</select>
+
+<!--It is a list box if a size attribute isnt specified
+
+EXAMPLE-->
+<select id="statesList" name="states" size="5">
+    <option value="CO">Colorado</option>
+ <option value="ME">Maine</option>
+ <option value="TX">Texas</option>
+ <option value="WA">Washington</option>
+   </select>
+
+   <!--Loading <select> from an array-->
+    HTML
+<select id="statesList">
+</select>
+<!--JavaScript-->
+<script>
+window.onload = function() {
+ // load the dropdown list
+ let states = ["Alabama", "Alaska", "Arizona",  ];
+ let abbrev = ["AL", "AK", "AZ", ];
+ const statesList = document.getElementById("statesList");
+ let length = states.length;
+ for (let i = 0; i < length; i++) {
+ // create the option element
+ let theOption = document.createElement("option");
+ // set the text and value of the option you created
+ theOption.textContent = states[i]; 
+ theOption.value = abbrev[i]; 
+ // append the option as a child of (inside) the 
+ // select element
+ statesList.appendChild(theOption);
+ }
+ // other stuff
+ 
+};</script>
+
+<!--Rather then creating an adding the option in 4 lines it can be reduced to 2 lines of code
+
+EXAMPLE-->
+
+window.onload = function() {
+    // load the dropdown list
+    let states = ["Alabama", "Alaska", "Arizona", ... ];
+    let abbrev = ["AL", "AK", "AZ", ... ];
+    const statesList = document.getElementById("statesList");
+    let length = states.length;
+    for (let i = 0; i < length; i++) {
+    // create the option element and set the text and
+    // value at the same time
+    let theOption = new Option(states[i], abbrev[i]); 
+    // append the option as a child of (inside) the 
+    // select element
+    statesList.appendChild(theOption);
+    }
+    // other stuff
+    ...
+   };
+
+   <!--A better design would be to encapsulate the dropdown loading into a functtion and then call it from your windows onload event handler
+EXAMPLE-->
+
+window.onload = function() {
+    // load the dropdown list
+    initStatesDropdown();
+    // other stuff
+    ...
+   };
+   function initStatesDropdown() {
+    // load the dropdown list
+    let states = ["Alabama", "Alaska", "Arizona", ... ];
+    let abbrev = ["AL", "AK", "AZ", ... ];
+    const statesList = document.getElementById("statesList");
+    let length = states.length;
+    for (let i = 0; i < length; i++) {
+    // create the option element and set the text and
+    // value at the same time
+    let theOption = new Option(states[i], abbrev[i]); 
+    // append the option as a child of (inside) the 
+    // select element
+    statesList.appendChild(theOption);
+    }
+   }
+   
+

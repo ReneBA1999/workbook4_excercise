@@ -1,28 +1,4 @@
-// "use strict"
 
-// function parsePartCode(product){
-
-// let product ={
-//     supplierCode: "someValue",
-//     productNumber: "someValue",
-//     size: "someValue"
-// };
-//  return product;
-// }
-
-// let exampleString = "XYZ:1234-L";
-// let parts = exampleString.split(":");
-// let partCode1 = parts[0];
-// let partCode2 = parts[1].split("-")[0];
-// let partCode3 = parts[1].split("-")[1];
-
-// const product = {
-//     supplierCode: partCode1, // Extracted "XYZ"
-//     productNumber: partCode2, // Extracted "1234"
-//     size: partCode3 // Extracted "L"
-// };
-
-// console.log(product);
 
 
 "use strict"
